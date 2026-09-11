@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">来电接听转发助手</string>
+    <string name="accessibility_desc">用于在白名单来电时自动模拟滑动接听电话，并自动开启免提。</string>
+</resources>

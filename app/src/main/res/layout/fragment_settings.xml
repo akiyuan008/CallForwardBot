@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="企业微信配置（自建应用）"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etCorpId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="corpid（我的企业 → 企业信息）"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/etSecret"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="corpsecret（应用 → Secret）"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/etAgentId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="agentid（应用详情页）"
+            android:inputType="number"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/etToUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="家长账号（通讯录中的 UserID，多个用 | 分隔）"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="接听设置"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etDelay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="白名单来电后自动接听延迟（秒，默认 3）"
+            android:inputType="number"
+            android:singleLine="true" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="保存配置" />
+
+        <Button
+            android:id="@+id/btnTestSend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="发送测试文字消息（验证企业微信链路）" />
+
+        <Button
+            android:id="@+id/btnBattery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="申请忽略电池优化" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:lineSpacingExtra="4dp"
+            android:text="保活指引：
+1. 设置 → 应用管理 → 本应用 → 电池：选择「无限制」。
+2. 允许自启动、允许后台运行（澎湃OS / OriginOS 在安全中心中设置）。
+3. 最近任务列表中下拉锁定本应用。
+4. 在手机管家中将本应用加入后台清理白名单。
+5. 系统设置中开启「自动通话录音」，确保录音文件会保存到本机。" />
+    </LinearLayout>
+</ScrollView>
