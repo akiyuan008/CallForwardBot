@@ -77,7 +77,7 @@ class CallMonitorService : Service() {
         val noti = builder
             .setContentTitle("来电接听转发助手")
             .setContentText("后台监听中，白名单来电将自动接听并转发录音")
-            .setSmallIcon(android.R.drawable.stat_notify_call)
+            .setSmallIcon(R.drawable.stat_notify_call)
             .setContentIntent(pi)
             .build()
         try {
