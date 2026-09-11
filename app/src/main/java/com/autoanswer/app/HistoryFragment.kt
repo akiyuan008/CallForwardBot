@@ -39,8 +39,7 @@ class HistoryFragment : Fragment() {
                 val line = (if (ok) "✅ " else "❌ ") +
                         fmt.format(Date(o.optLong("time"))) +
                         "  来自：" + o.optString("number") +
-                        "  大小：" + (o.optLong("size") / 1024) + "KB
-" +
+                        "  大小：" + (o.optLong("size") / 1024) + "KB\n" +
                         o.optString("detail")
                 items.add(o to line)
             }
@@ -55,8 +54,7 @@ class HistoryFragment : Fragment() {
             val file = File(o.optString("file"))
             AlertDialog.Builder(c)
                 .setTitle("重发这条录音？")
-                .setMessage("文件：${file.name}
-存在：${file.exists()}")
+                .setMessage("文件：${file.name}\n存在：${file.exists()}")
                 .setPositiveButton("重发") { _, _ ->
                     if (file.exists()) {
                         WeComSender.sendRecording(c, o.optString("number"), file) { ok, detail ->

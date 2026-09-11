@@ -19,12 +19,8 @@ class CheckFragment : Fragment() {
             tv.text = "自检中……"
             Thread {
                 val results = SelfCheck.runChecks(requireContext())
-                val report = SelfCheck.report(results) + "
-
-录音目录列表：
-" +
-                        RecWatcher.candidateDirs().joinToString("
-") { it.absolutePath }
+                val report = SelfCheck.report(results) + "\n\n录音目录列表：\n" +
+                        RecWatcher.candidateDirs().joinToString("\n") { it.absolutePath }
                 activity?.runOnUiThread { tv.text = report }
             }.start()
         }

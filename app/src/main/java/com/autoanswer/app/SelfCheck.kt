@@ -73,16 +73,12 @@ object SelfCheck {
         val sb = StringBuilder()
         sb.append("自检时间：")
             .append(SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA).format(Date()))
-            .append("
-
-")
+            .append("\n\n")
         results.forEach { (name, ok) ->
-            sb.append(if (ok) "✅ " else "❌ ").append(name).append("
-")
+            sb.append(if (ok) "✅ " else "❌ ").append(name).append("\n")
         }
         if (LogHolder.lastError.isNotEmpty()) {
-            sb.append("
-最近错误：").append(LogHolder.lastError)
+            sb.append("\n最近错误：").append(LogHolder.lastError)
         }
         return sb.toString()
     }
